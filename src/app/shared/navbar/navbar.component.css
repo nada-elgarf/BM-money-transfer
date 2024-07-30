@@ -1,0 +1,82 @@
+nav {
+  width: Fixed (1, 440px)px;
+  height: Hug (91.23px)px;
+  padding: 10px 0px 10px 0px;
+  gap: 0px;
+  opacity: 0px;
+
+}
+
+.navbar-brand {
+  width: Hug (303px)px;
+  height: Fixed (71.23px)px;
+  padding: 0px 16px 0px 0px;
+  gap: 0px;
+  opacity: 0px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 32px;
+  color: rgba(36, 34, 30, 1);
+  line-height: 48px;
+}
+
+button {
+  display: inline-block;
+  margin: 5px;
+}
+
+.login {
+  width: Hug (107px)px;
+  height: Hug (56px)px;
+  padding: 16px 32px 16px 32px;
+  gap: 0px;
+  border-radius: 6.5px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid rgba(36, 34, 30, 1)
+}
+
+.sign {
+  width: Hug (167px)px;
+  height: Hug (56px)px;
+  padding: 16px 32px 16px 32px;
+  gap: 0px;
+  border-radius: 6.5px 0px 0px 0px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  color: #fff;
+  background-color: rgba(135, 30, 53, 1);
+  border: 1px solid rgba(135, 30, 53, 1)
+}
+
+.navbar-nav {
+  width: Hug (354px)px;
+  height: Hug (48px)px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.nav-item {
+  width: Hug (78px)px;
+  height: Fixed (48px)px;
+  padding: 0px 16px 0px 16px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.nav-item a {
+  display: inline-block;
+  gap: 0px;
+  opacity: 0px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+
+}
