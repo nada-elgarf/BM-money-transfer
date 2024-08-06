@@ -1,3 +1,173 @@
-<p>
-  registration works!
-</p>
+<header>
+  <div class="container">
+    <h2>Speedo Transfer</h2>
+    <img src="../../../assets/cancel.svg" alt="cancel" (click)="closeDialog()" style="cursor: pointer;">
+  </div>
+</header>
+
+<div class="registration">
+  <div class="create-account">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="info">
+            <h2>Create Your Account</h2>
+            <span>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut
+              labore.</span>
+          </div>
+          <form [formGroup]="userRegister" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+              <label>User name</label>
+              <input class="form-control" formControlName="username" placeholder="User name">
+              <div *ngIf="userRegister.get('username')?.invalid && userRegister.get('username')?.touched">
+                <small class="text-danger" *ngIf="userRegister.get('username')?.errors?.['required']">Username is
+                  required.</small>
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control" formControlName="email" placeholder="Email address">
+              <div *ngIf="userRegister.get('email')?.invalid && userRegister.get('email')?.touched">
+                <small class="text-danger" *ngIf="userRegister.get('email')?.errors?.['required']">Email is
+                  required.</small>
+                <small class="text-danger" *ngIf="userRegister.get('email')?.errors?.['email']">Enter a valid email
+                  address.</small>
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Gender</label>
+              <select class="form-select" formControlName="gender">
+                <option value="" selected>Select a gender</option>
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+              </select>
+              <div *ngIf="userRegister.get('gender')?.invalid && userRegister.get('gender')?.touched">
+                <small class="text-danger" *ngIf="userRegister.get('gender')?.errors?.['required']">Gender is
+                  required.</small>
+              </div>
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Phone Number</label>
+              <input class="form-control" formControlName="phone" placeholder="Phone number">
+              <div *ngIf="userRegister.get('phone')?.invalid && userRegister.get('phone')?.touched">
+                <small class="text-danger" *ngIf="userRegister.get('phone')?.errors?.['required']">Phone number is
+                  required.</small>
+
+              </div>
+
+            </div>
+
+            <div class="form-group mb-3">
+              <label>Country</label>
+              <select class="form-select" formControlName="country">
+                <option value="" selected>Select a country</option>
+                <option value="Afghanistan">Afghanistan</option>
+                <option value="China">China</option>
+                <option value="India">India</option>
+                <option value="Egypt">Egypt</option>
+                <option value="United_States">United_States</option>
+              </select>
+              <div *ngIf="userRegister.get('country')?.invalid && userRegister.get('country')?.touched">
+                <small class="text-danger" *ngIf="userRegister.get('country')?.errors?.['required']">Country is
+                  required.</small>
+              </div>
+            </div>
+
+            <div formGroupName="birthdate">
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <label class="form-label">Day</label>
+                  <input class="form-control" formControlName="day" type="number" placeholder="DD" min="1" max="31">
+                  <div *ngIf="userRegister.get('birthdate.day')?.invalid && userRegister.get('birthdate.day')?.touched">
+                    <small class="text-danger" *ngIf="userRegister.get('birthdate.day')?.errors?.['required']">Day is
+                      required.</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Month</label>
+                  <select class="form-select" formControlName="month">
+                    <option value="" selected>Select month</option>
+                    <option value="01">1</option>
+                    <option value="02">2</option>
+                    <option value="03">3</option>
+                    <option value="04">4</option>
+                    <option value="05">5</option>
+                    <option value="06">6</option>
+                    <option value="07">7</option>
+                    <option value="08">8</option>
+                    <option value="09">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                  <div
+                    *ngIf="userRegister.get('birthdate.month')?.invalid && userRegister.get('birthdate.month')?.touched">
+                    <small class="text-danger" *ngIf="userRegister.get('birthdate.month')?.errors?.['required']">Month
+                      is required.</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Year</label>
+                  <select class="form-select" formControlName="year">
+                    <option value="" selected>Select year</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                  </select>
+                  <div
+                    *ngIf="userRegister.get('birthdate.year')?.invalid && userRegister.get('birthdate.year')?.touched">
+                    <small class="text-danger" *ngIf="userRegister.get('birthdate.year')?.errors?.['required']">Year is
+                      required.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="form-group mb-3 password-group">
+              <label class="form-label">Password</label>
+              <input [type]="passwordType" class="form-control" formControlName="password"
+                placeholder="***************">
+              <img [src]="passwordVisible ? '../../../assets/Open-eye.svg' : '../../../assets/Close-eye.svg'"
+                alt="eye icon" class="password-toggle-icon" (click)="togglePasswordVisibility()">
+              <div *ngIf="userRegister.get('password')?.invalid && userRegister.get('password')?.touched">
+                <small class="text-danger" *ngIf="userRegister.get('password')?.errors?.['required']">Password is
+                  required.</small>
+                <small class="text-danger" *ngIf="userRegister.get('password')?.errors?.['minlength']">Password must be
+                  at least 8 characters long.</small>
+                <small class="text-danger" *ngIf="userRegister.get('password')?.errors?.['pattern']">Password must
+                  include uppercase, lowercase, numbers, and special characters.</small>
+              </div>
+            </div>
+
+            <div class="form-group mb-3 password-group">
+              <label class="form-label">Confirm Password</label>
+              <input [type]="confirmPasswordType" class="form-control" formControlName="confirmPassword"
+                placeholder="***************">
+              <img [src]="confirmPasswordVisible ? '../../../assets/Open-eye.svg' : '../../../assets/Close-eye.svg'"
+                alt="eye icon" class="password-toggle-icon" (click)="toggleConfirmPasswordVisibility()">
+              <div *ngIf="userRegister.errors?.['mismatch'] && userRegister.get('confirmPassword')?.touched">
+                <small class="text-danger">Passwords do not match.</small>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-danger" type="submit">Create Account</button>
+              <span class="already">Already have an account? <a class="login">Login</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p class="text-center">&copy; Speedo Transfer Payments Limited 2024</p>
+</footer>

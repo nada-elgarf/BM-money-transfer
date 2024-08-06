@@ -1,0 +1,27 @@
+<div class="page-container mt-4">
+  <h1 class="heading">Payment History</h1>
+  <div class="background-container">
+    <div class="background-text">
+      <p>Account Number: 6785 4987 6543</p>
+    </div>
+    <div class="copy-icon" (click)="copyText()">
+      <i class="fa-regular fa-copy"></i>
+    </div>
+  </div>
+  <div *ngIf="copyMessage" class="copy-message">{{ copyMessage }}</div>
+  <div class="details" *ngIf="paymentHistory.length > 0">
+    <div *ngFor="let transaction of paymentHistory" class="transaction">
+      <div class="name">
+        <h6>Account Details</h6>
+        <span>{{ transaction.recipientName }}</span>
+      </div>
+      <div class="detail">
+        <h6>Total Price : {{ transaction.totalPrice }} USD</h6>
+        <span>{{ transaction.senderName }}</span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="paymentHistory.length === 0" class="details">
+    <p>No payment history available.</p>
+  </div>
+</div>

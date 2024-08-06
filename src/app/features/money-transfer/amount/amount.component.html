@@ -1,0 +1,149 @@
+<div class="container mb-5 ">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="stepper-wrapper">
+        <div class="stepper-item completed ">
+          <div class="step-counter">1</div>
+          <div class="step-name">Amount</div>
+        </div>
+        <div class="stepper-item ">
+          <div class="step-counter">2</div>
+          <div class="step-name">Confirmation</div>
+        </div>
+        <div class="stepper-item ">
+          <div class="step-counter">3</div>
+          <div class="step-name">Payment</div>
+        </div>
+      </div>
+      <div class="title">
+        <h3>How much are you sending?</h3>
+        <span>Rate guaranteed (2h)</span>
+        <p>1000 USD = 48.4220 EGP</p>
+      </div>
+      <div class="form">
+        <form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label for="amount">You send</label>
+              <div class="input-container">
+                <input id="amount" formControlName="amount" type="number" (input)="convertAmount()"
+                  class="form-control" />
+                <img src="../../../../assets/united states.svg" alt="united states">
+                <select id="fromCurrency" class="dropdown-form" formControlName="fromCurrency"
+                  (change)="convertAmount()">
+                  <option *ngFor="let option of currencyOptions" [value]="option">
+                    {{ option }}
+                  </option>
+                </select>
+              </div>
+              <div class="error-message" *ngIf="
+                  transferForm.controls['amount'].invalid &&
+                  (transferForm.controls['amount'].dirty ||
+                    transferForm.controls['amount'].touched)
+                ">
+                <small *ngIf="transferForm.controls['amount'].errors?.['required']">Amount is required.</small>
+                <small *ngIf="transferForm.controls['amount'].errors?.['min']">Amount must be greater than zero.</small>
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <label for="convertedAmount">Recipient Gets</label>
+              <div class="input-container">
+                <input id="convertedAmount" [value]="convertedAmount" readonly class="form-control" />
+                <img src="../../../../assets/egypt.svg" alt="egypt">
+                <select id="toCurrency" formControlName="toCurrency" (change)="convertAmount()">
+                  <option *ngFor="let option of currencyOptions" [value]="option">
+                    {{ option }}
+                  </option>
+                </select>
+              </div>
+              <div class="error-message" *ngIf="
+                  transferForm.controls['toCurrency'].invalid &&
+                  (transferForm.controls['toCurrency'].dirty ||
+                    transferForm.controls['toCurrency'].touched)
+                ">
+                <small *ngIf="transferForm.controls['toCurrency'].errors?.['required']">Currency is required.</small>
+              </div>
+            </div>
+            <div class="favourite-container">
+              <div class="text-favourite">
+                <p>Recipient Information</p>
+              </div>
+              <div class="info-btn">
+                <i class="fa-regular fa-star"></i>
+                <button class="info-text" data-bs-toggle="modal" data-bs-target="#myModal">Favourite</button>
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <label for="recipientName">Recipient Name</label>
+              <div class="input-container__text">
+                <input id="recipientName" formControlName="recipientName" type="text" class="form-control" />
+                <div class="error-message" *ngIf="
+                    transferForm.controls['recipientName'].invalid &&
+                    (transferForm.controls['recipientName'].dirty ||
+                      transferForm.controls['recipientName'].touched)
+                  ">
+                  <small *ngIf="transferForm.controls['recipientName'].errors?.['required']">Recipient Name is
+                    required.</small>
+                </div>
+              </div>
+            </div>
+            <div class="input-wrapper">
+              <label for="recipientAccount">Recipient Account</label>
+              <div class="input-container__text">
+                <input id="recipientAccount" formControlName="recipientAccount" type="text" class="form-control" />
+                <div class="error-message" *ngIf="
+                    transferForm.controls['recipientAccount'].invalid &&
+                    (transferForm.controls['recipientAccount'].dirty ||
+                      transferForm.controls['recipientAccount'].touched)
+                  ">
+                  <small *ngIf="transferForm.controls['recipientAccount'].errors?.['required']">Recipient Account is
+                    required.</small>
+                </div>
+              </div>
+            </div>
+            <button class="btn-money-transfer__form" type="submit">
+              Continue
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="info-btn mb-3">
+          <i class="fa-regular fa-star"></i>
+          <button class="info-text p-1">Favourite List</button>
+        </div>
+        <div class="box mb-4">
+          <div class="image">
+            <img src="../../../../assets/bank.svg" alt="bank">
+          </div>
+          <div class="info">
+            <h5>Asmaa Dosuky</h5>
+            <span>123456789456</span>
+          </div>
+        </div>
+        <div class="box">
+          <div class="image">
+            <img src="../../../../assets/bank.svg" alt="bank">
+          </div>
+          <div class="info">
+            <h5>Asmaa Dosuky</h5>
+            <span>123456789456</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

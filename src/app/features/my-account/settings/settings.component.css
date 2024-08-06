@@ -1,0 +1,59 @@
+.container {
+  width: 700px;
+}
+
+.icons {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.icon {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  color: #6E6D6B;
+  /* Default color for inactive links */
+  cursor: pointer;
+}
+
+.icon a {
+  text-decoration: none;
+}
+
+.icon.active {
+  color: #871E35;
+  /* Color for active link */
+  border-bottom: 2px solid #871E35;
+  /* Underline for active link */
+}
+
+.profile-form,
+.change-password-form {
+  margin: 10px;
+}
+
+.update-button {
+  background-color: rgba(135, 30, 53, 1);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-control {
+  border: 1px solid #871E35;
+  outline: none;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+label {
+  padding-bottom: 10px;
+}

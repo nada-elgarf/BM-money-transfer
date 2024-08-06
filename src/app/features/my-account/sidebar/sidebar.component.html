@@ -1,0 +1,16 @@
+<div class="sidebar mt-4">
+  <ul>
+    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/my-account" routerLinkActive="active-link">My profile</a>
+    </li>
+    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/my-account/payment-history" routerLinkActive="active-link">Payments history</a>
+    </li>
+    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/my-account/settings" routerLinkActive="active-link">Settings</a>
+    </li>
+    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/my-account/change-password" routerLinkActive="active-link">Change password</a>
+    </li>
+  </ul>
+</div>

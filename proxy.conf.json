@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "http://18.156.119.108:8080",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

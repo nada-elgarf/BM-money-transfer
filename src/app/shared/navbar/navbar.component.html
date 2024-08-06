@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
-    <a class="navbar-brand">Speedo Transfer</a>
+    <a class="navbar-brand" routerLink="/">Speedo Transfer</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,19 +8,42 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page">Home</a>
+          <a class="nav-link" routerLink="/" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Money Transfer</a>
+          <a class="nav-link" routerLink="/money-transfer" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }">Money Transfer</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ">My Account</a>
+          <a class="nav-link" routerLink="/my-account" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }">My Account</a>
         </li>
       </ul>
-      <form class="d-flex ">
-        <button class=" login " type="submit">Login</button>
-        <button class=" sign" type="submit">Register Now</button>
+      <form class="d-flex" *ngIf="!isLoggedIn">
+        <button class="login" type="button" (click)="openDialogLogin()">Login</button>
+        <button class="sign" type="button" (click)="openDialogRegister()">Register Now</button>
       </form>
+      <div class="dropdown" *ngIf="isLoggedIn">
+        <div class="avatar-dropdown">
+          <div class="avatar-circle">
+            {{ getInitials() }}
+          </div>
+          <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            {{ username || 'User' }}
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" [routerLink]="['/my-account']">My Account</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/my-account/payment-history']">Payment History</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/my-account/settings']">Settings</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/my-account/change-password']">Change Password</a></li>
+            <li><a class="dropdown-item" href="#" (click)="logout()">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </nav>

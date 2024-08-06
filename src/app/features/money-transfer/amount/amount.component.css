@@ -1,0 +1,311 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stepper-wrapper {
+  font-family: Arial;
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.stepper-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+.stepper-item::before,
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: calc(100% + 20px);
+  top: 20px;
+  z-index: 2;
+}
+
+.stepper-item::before {
+  left: -50%;
+}
+
+.stepper-item::after {
+  left: 50%;
+}
+
+.stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ccc;
+  margin-bottom: 6px;
+}
+
+.stepper-item.active {
+  font-weight: bold;
+}
+
+.stepper-item.completed .step-counter {
+  background-color: #871E35;
+  color: #fff;
+}
+
+.stepper-item.completed::after {
+  border-bottom: 2px solid #871E35;
+  z-index: 3;
+}
+
+.stepper-item:first-child::before {
+  content: none;
+}
+
+.stepper-item:last-child::after {
+  content: none;
+}
+
+.title {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.title h3 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 60px;
+  color: #24221E;
+}
+
+.title span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #565552;
+}
+
+.title p {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  color: #3C3A37;
+}
+
+.text-money__transfer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.input-wrapper {
+  margin-bottom: 20px;
+}
+
+.input-wrapper label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-container input,
+.input-container__text input {
+  flex: 1;
+  height: 55px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+}
+
+.input-container input {
+  max-width: 500px;
+}
+
+.input-container__text input {
+  max-width: 640px;
+}
+
+.input-container select {
+  flex-shrink: 0;
+  width: 150px;
+  height: 56px;
+  background-color: rgba(227, 226, 226, 1);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+  text-align: center;
+}
+
+.btn-money-transfer__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #871e35;
+  color: #fff;
+  height: 56px;
+  width: 100%;
+  max-width: 554px;
+  padding: 16px 32px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0 auto;
+}
+
+.btn-money-transfer__form:hover {
+  background-color: #a23c49;
+}
+
+.btn-money-transfer__form:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.info-btn button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #871e35;
+}
+
+.info-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #871e35;
+  border: none;
+  background: none;
+  transition: color 0.3s;
+}
+
+
+.info-btn:hover {
+  color: #551321;
+}
+
+.info-text {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+.favourite-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.text-favourite {
+  font-size: 1.3rem;
+}
+
+select {
+  border: none;
+  outline: none;
+}
+
+
+
+.form img {
+  position: absolute;
+  right: 100px;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-body .box {
+  display: flex;
+}
+
+.box {
+  background-color: #F6F6F6;
+  padding: 10px 20px;
+}
+
+.box .image {
+  width: 60px;
+  height: 60px;
+  background-color: #E3E2E2;
+  border-radius: 50%;
+  position: relative;
+}
+
+.box .image img {
+  width: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box .info {
+  margin-left: 15px;
+}
+
+.box .info h5 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: #3C3A37;
+
+}
+
+.box .info span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #898886;
+
+}

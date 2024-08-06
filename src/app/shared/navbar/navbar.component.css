@@ -1,18 +1,9 @@
 nav {
-  width: Fixed (1, 440px)px;
-  height: Hug (91.23px)px;
-  padding: 10px 0px 10px 0px;
-  gap: 0px;
-  opacity: 0px;
-
+  padding: 10px 0;
 }
 
 .navbar-brand {
-  width: Hug (303px)px;
-  height: Fixed (71.23px)px;
-  padding: 0px 16px 0px 0px;
-  gap: 0px;
-  opacity: 0px;
+  padding: 0 16px 0 0;
   font-weight: 600;
   text-align: center;
   font-size: 32px;
@@ -26,57 +17,91 @@ button {
 }
 
 .login {
-  width: Hug (107px)px;
-  height: Hug (56px)px;
-  padding: 16px 32px 16px 32px;
-  gap: 0px;
-  border-radius: 6.5px 0px 0px 0px;
-  border: 1px 0px 0px 0px;
-  opacity: 0px;
-  font-family: Inter;
+  padding: 16px 32px;
+  border-radius: 6.5px 0 0 0;
+  border: 1px solid rgba(36, 34, 30, 1);
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   text-align: center;
-  border: 1px solid rgba(36, 34, 30, 1)
+  background-color: transparent;
 }
 
 .sign {
-  width: Hug (167px)px;
-  height: Hug (56px)px;
-  padding: 16px 32px 16px 32px;
-  gap: 0px;
-  border-radius: 6.5px 0px 0px 0px;
-  border: 1px 0px 0px 0px;
-  opacity: 0px;
+  padding: 16px 32px;
+  border-radius: 6.5px 0 0 0;
+  border: 1px solid rgba(135, 30, 53, 1);
   color: #fff;
   background-color: rgba(135, 30, 53, 1);
-  border: 1px solid rgba(135, 30, 53, 1)
 }
 
-.navbar-nav {
-  width: Hug (354px)px;
-  height: Hug (48px)px;
-  gap: 0px;
-  opacity: 0px;
-}
+
 
 .nav-item {
-  width: Hug (78px)px;
-  height: Fixed (48px)px;
-  padding: 0px 16px 0px 16px;
-  gap: 0px;
-  opacity: 0px;
+  padding: 0 16px;
 }
 
 .nav-item a {
   display: inline-block;
-  gap: 0px;
-  opacity: 0px;
-  font-family: Inter;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   text-align: left;
+}
 
+.active-link {
+  color: #871E35 !important;
+}
+
+.dropdown {
+  background-color: transparent !important;
+}
+
+.dropdown-menu .dropdown-item {
+  border-bottom: 1px solid #E3E2E2 !important;
+  padding: 15px 30px;
+  color: #000;
+  text-decoration: none;
+}
+
+.dropdown-menu>.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #9b4457;
+  color: #fff;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: transparent !important;
+}
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: transparent !important;
+}
+
+.full-page-dialog .mat-dialog-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.avatar-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #E3E2E2;
+  color: #3C3A37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
 }

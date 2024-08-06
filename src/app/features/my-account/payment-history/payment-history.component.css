@@ -1,0 +1,55 @@
+.page-container {
+  padding: 15px;
+  margin-left: 15px;
+}
+
+.heading {
+  margin-bottom: 20px;
+}
+
+.background-container {
+  width: 600px;
+  background-color: #F3E9EB;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.background-container p {
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.details h6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #24221E;
+}
+
+.details span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #4B4A47;
+
+}
+
+.copy-message {
+  margin-top: 10px;
+  color: #871E35;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}

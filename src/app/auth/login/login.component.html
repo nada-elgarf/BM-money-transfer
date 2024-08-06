@@ -1,3 +1,67 @@
-<p>
-  login works!
-</p>
+<header>
+  <div class="container ">
+    <h2>Speedo Transfer</h2>
+    <img src="../../../assets/cancel.svg" alt="cancel" (click)="closeDialog()" style="cursor: pointer;">
+  </div>
+</header>
+<section>
+  <div class="login">
+    <h3 class="text-center">Login</h3>
+    <span>New Account?<a>Sign Up</a></span>
+    <p *ngIf="showAlert" class="alert alert-light">
+      <img src="../../../assets/alert.svg" alt="alert">
+      We logged you out because you were inactive for 5 minutes - it’s to help your account secure.
+    </p>
+  </div>
+</section>
+
+<div class="login-user">
+  <div class="create-account">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="info">
+            <h2>Login here</h2>
+            <span>Welcome back. Login to your account</span>
+          </div>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control" formControlName="email" placeholder="Email address">
+              <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error">
+                <small *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</small>
+                <small *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email address.</small>
+              </div>
+            </div>
+            <div class="form-group mb-3 password-group">
+              <label class="form-label">Password</label>
+              <div class="password-wrapper">
+                <input [type]="passwordVisible ? 'text' : 'password'" class="form-control" formControlName="password"
+                  placeholder="***************">
+                <img src="../../../assets/Close-eye.svg" alt="Show Password" (click)="togglePasswordVisibility()"
+                  class="password-toggle-icon" *ngIf="!passwordVisible">
+                <img src="../../../assets/Open-eye.svg" alt="Hide Password" (click)="togglePasswordVisibility()"
+                  class="password-toggle-icon" *ngIf="passwordVisible">
+              </div>
+              <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+                <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+                <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters
+                  long.</small>
+                <small *ngIf="loginForm.get('password')?.errors?.['pattern']">Password must include upper and lower case
+                  letters, numbers, and symbols.</small>
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-danger" type="submit">Login</button>
+              <span class="already">Don’t have an account? <a class="login">Create Account</a></span>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p class="text-center">&copy; Speedo Transfer Payments Limited 2024</p>
+</footer>

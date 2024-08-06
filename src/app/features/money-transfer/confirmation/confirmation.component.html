@@ -1,0 +1,59 @@
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="stepper-wrapper">
+        <div class="stepper-item completed">
+          <div class="step-counter">1</div>
+          <div class="step-name">Amount</div>
+        </div>
+        <div class="stepper-item completed">
+          <div class="step-counter">2</div>
+          <div class="step-name">Confirmation</div>
+        </div>
+        <div class="stepper-item">
+          <div class="step-counter">3</div>
+          <div class="step-name">Payment</div>
+        </div>
+      </div>
+      <div class="title">
+        <h3>{{amount}} USD</h3>
+        <span>Transfer amount</span>
+      </div>
+      <div class="information">
+        <span>Total amount</span>
+        <span>{{convertedAmount}} EGP</span>
+      </div>
+      <div class="boxes mb-4">
+        <div class="box">
+          <div class="image">
+            <img src="../../../../assets/bank.svg" alt="bank">
+          </div>
+          <div class="info">
+            <h6>From</h6>
+            <h5>{{recipientName}}</h5>
+            <span>{{recipientAccount}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="transfer text-center p-2">
+        <img src="../../../../assets/transfer.svg" alt="transfer">
+      </div>
+      <div class="boxes mb-4">
+        <div class="box">
+          <div class="image">
+            <img src="../../../../assets/bank.svg" alt="bank">
+          </div>
+          <div class="info">
+            <h6>To</h6>
+            <h5>{{recipientName}}</h5>
+            <span>{{recipientAccount}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="d-grid gap-2 confirm">
+        <button type="button" (click)="confirm()">Confirm</button>
+        <button class="back" type="button" (click)="back()">Back</button>
+      </div>
+    </div>
+  </div>
+</div>

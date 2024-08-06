@@ -1,0 +1,77 @@
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="stepper-wrapper">
+        <div class="stepper-item completed">
+          <div class="step-counter">1</div>
+          <div class="step-name">Amount</div>
+        </div>
+        <div class="stepper-item completed">
+          <div class="step-counter">2</div>
+          <div class="step-name">Confirmation</div>
+        </div>
+        <div class="stepper-item completed">
+          <div class="step-counter">3</div>
+          <div class="step-name">Payment</div>
+        </div>
+      </div>
+
+      <div *ngIf="amount && convertedAmount && recipientName && recipientAccount" class="title">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>Your transfer was successful</h3>
+        <p>{{ convertedAmount }} <span>EGP</span></p>
+      </div>
+
+      <div *ngIf="amount && convertedAmount" class="information">
+        <span>Total amount</span>
+        <span>{{ convertedAmount }} EGP</span>
+      </div>
+
+      <div *ngIf="recipientName && recipientAccount" class="boxes mb-4">
+        <div class="box">
+          <div class="image">
+            <img src="../../../../assets/bank.svg" alt="bank">
+          </div>
+          <div class="info">
+            <h6>From</h6>
+            <h5>{{ recipientName }}</h5>
+            <span>{{ recipientAccount }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-2">
+        <img src="../../../../assets/transfer.svg" alt="transfer">
+      </div>
+
+      <div *ngIf="recipientName && recipientAccount" class="boxes mb-4">
+        <div class="box">
+          <div class="image">
+            <img src="../../../../assets/bank.svg" alt="bank">
+          </div>
+          <div class="info">
+            <h6>To</h6>
+            <h5>{{ recipientName }}</h5>
+            <span>{{ recipientAccount }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="transfer">
+        <div class="info">
+          <span>Transfer amount</span>
+          <span>{{ convertedAmount }} EGP</span>
+        </div>
+        <div class="info">
+          <span>Fees</span>
+          <div>18.97 USD <i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2">
+        <button type="button" (click)="backHome()">Back to Home</button>
+        <button class="back" type="button">Add To Favourite</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<div class="container mt-4">
+  <h1>Settings</h1>
+  <div class="icons">
+    <div class="icon" [ngClass]="{'active': activeSection === 'profile'}">
+      <a (click)="setActiveSection('profile')">Profile</a>
+    </div>
+    <div class="icon" [ngClass]="{'active': activeSection === 'change-password'}">
+      <a (click)="setActiveSection('change-password')">Change Password</a>
+    </div>
+  </div>
+
+  <div *ngIf="activeSection === 'profile'" class="profile-form">
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group mb-3">
+            <label for="username">Username</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group mb-3">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group mb-3">
+            <label for="lastname">Last Name</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="update-button-container">
+        <button type="submit" class="update-button">Update Profile</button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="activeSection === 'change-password'" class="change-password-form">
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group mb-3">
+            <label for="current-password">Current password</label>
+            <input type="text" placeholder="Type here" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group mb-3">
+            <label for="new-password">New password</label>
+            <input type="text" placeholder="Type here" class="form-control">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="update-button-container">
+        <button type="submit" class="update-button">Update Password</button>
+      </div>
+    </form>
+  </div>
+</div>

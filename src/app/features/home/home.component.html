@@ -1,0 +1,114 @@
+<div class="landing">
+  <div class="overlay"></div>
+  <div class="container ">
+    <div class="row">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="info">
+          <h5>Simple. Quick. Secure.</h5>
+          <p>Send Money<br> Anywhere, Instantly</p>
+          <span> Fast, secure, and affordable international money<br> transfers. Get started in minutes</span>
+          <button type="submit">Create An Account</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form">
+          <form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+            <div class="input-group">
+              <div class="input-wrapper">
+                <label for="amount">You send</label>
+                <div class="input-container">
+                  <input id="amount" formControlName="amount" type="number" (input)="convertAmount()"
+                    class="form-control" />
+                  <img src="../../../../assets/united states.svg" alt="united states">
+                  <select id="fromCurrency" class="dropdown-form" formControlName="fromCurrency"
+                    (change)="convertAmount()">
+                    <option *ngFor="let option of currencyOptions" [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                </div>
+                <div class="error-message" *ngIf="
+                    transferForm.controls['amount'].invalid &&
+                    (transferForm.controls['amount'].dirty ||
+                      transferForm.controls['amount'].touched)
+                  ">
+                  <small *ngIf="transferForm.controls['amount'].errors?.['required']">Amount is required.</small>
+                  <small *ngIf="transferForm.controls['amount'].errors?.['min']">Amount must be greater than
+                    zero.</small>
+                </div>
+              </div>
+              <div class="input-wrapper">
+                <label for="convertedAmount">Recipient Gets</label>
+                <div class="input-container">
+                  <input id="convertedAmount" [value]="convertedAmount" readonly class="form-control" />
+                  <img src="../../../../assets/egypt.svg" alt="egypt">
+                  <select id="toCurrency" formControlName="toCurrency" (change)="convertAmount()">
+                    <option *ngFor="let option of currencyOptions" [value]="option">
+                      {{ option }}
+                    </option>
+                  </select>
+                </div>
+                <div class="error-message" *ngIf="
+                    transferForm.controls['toCurrency'].invalid &&
+                    (transferForm.controls['toCurrency'].dirty ||
+                      transferForm.controls['toCurrency'].touched)
+                  ">
+                  <small *ngIf="transferForm.controls['toCurrency'].errors?.['required']">Currency is required.</small>
+                </div>
+              </div>
+              <p>Delivery Time: <span>By May 20th</span></p>
+              <button class="btn-money-transfer__form mb-3" type="submit">
+                Continue
+              </button>
+              <p class="Policy" *ngIf="isLoggedIn">By Clicking Continue, I’m agree with <small> Terms & Policy</small>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="get-start">
+  <div class="container">
+    <div class="row text-center">
+      <h5 class="col-12">Getting Started</h5>
+      <p class="col-12">Lorem Ipsum is simply dummy<br> text of the printing.</p>
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="image">
+          <img src="../../../assets/Create Account.svg" alt="Create Account">
+        </div>
+        <div class="text">
+          <h2><span>1.</span>Create Account</h2>
+          <span>Adipiscing eliId neque mi diam nim<br>
+            etus arcu porta viverra pretium<br>
+            auctor ut nam sed.</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="image">
+          <img src="../../../assets/Confirmation.svg" alt="Confirmation">
+        </div>
+        <div class="text">
+          <h2><span>2.</span>Confirmation</h2>
+          <span class="comfirmation">Adipiscing eliId neque mi diam nim<br>
+            etus arcu porta viverra pretium<br>
+            auctor ut nam sed.</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-12">
+        <div class="image">
+          <img src="../../../assets/Payment.svg" alt="Payment">
+        </div>
+        <div class="text">
+          <h2><span>3.</span>Payment</h2>
+          <span class="payment">Adipiscing eliId neque mi diam nim<br>
+            etus arcu porta viverra pretium<br>
+            auctor ut nam sed.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

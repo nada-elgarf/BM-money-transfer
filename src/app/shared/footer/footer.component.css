@@ -1,46 +1,84 @@
 footer {
-  width: Fixed (1, 440px)px;
-  height: Hug (424px)px;
-  top: 2220.89px;
-  padding: 50px 96px 0px 96px;
-  gap: 32px;
-  opacity: 0px;
+  width: 100%;
+  padding: 50px 16px;
   background: rgba(82, 18, 32, 1);
+  color: rgba(251, 251, 251, 1);
 }
 
 footer .container {
-  width: Fill (1, 248px)px;
-  height: Hug (281px)px;
-  gap: 0px;
-  opacity: 0px;
-
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
-.footer .info {
-  width: Hug (624px)px;
-  height: Hug (252.13px)px;
-  gap: 16px;
-  opacity: 0px;
-
+footer .info {
+  margin-bottom: 20px;
 }
 
 footer .info h3 {
-  gap: 0px;
-  opacity: 0px;
-  font-family: Inter;
+  font-family: Inter, sans-serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 48px;
   color: #fff;
-  padding: 0px, 16px, 0px, 0px;
 }
 
 footer .info p {
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 28.8px;
   text-align: center;
   color: rgba(251, 251, 251, 1);
+}
 
+footer .info b {
+  display: block;
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #fff;
+  margin: 10px 0;
+}
+
+footer .info a {
+  display: block;
+  color: rgba(243, 233, 235, 1);
+  margin: 5px 0;
+}
+
+hr {
+  border-color: rgba(205, 214, 224, 0.3);
+  margin: 20px 0;
+}
+
+footer p {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28.8px;
+  text-align: center;
+  color: rgba(251, 251, 251, 1);
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 30px 10px;
+  }
+
+  footer .info h3 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  footer .info p, footer p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  footer .info b {
+    font-size: 18px;
+    line-height: 22px;
+  }
 }

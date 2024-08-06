@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  display: block;
+  padding: 16px 32px 16px 32px;
+  border-radius: 6.5px 0px 0px 0px;
+  border: none;
+  background-color: #871E35;
+  color: #fff;
+  outline: none;
+}
